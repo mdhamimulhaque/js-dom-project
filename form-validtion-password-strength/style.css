@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    color:#fff
+}
+
+.card{
+    background-color: none;
+    background-color: #1E1E1E;
+}
+.email-box,.password-box{
+    margin-bottom:25px
+}
+
+input{
+    height: 35px;
+    width: 98%;
+    outline:none;
+   background-color: #1E1E1E;
+   border:1px solid  #F2F2F2
+}
+::placeholder{
+    color:#F2F2F2;
+    padding-left:10px;
+    font-size: 18px;
+}
+#password_required_msg{
+    display: none;
+}
