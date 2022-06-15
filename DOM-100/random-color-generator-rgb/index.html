@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Change The Background Color</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="./app.js" defer></script>
+	</head>
+	<body>
+		<div class="container" id="body">
+			<h1>
+				Change The Background Color By Clicking The Following Button
+			</h1>
+			<div class="main_box">
+				<div class="color_box">
+					<div class="input_box">
+						<input type="text" disabled value="#000000" id="show_rgbcolor_code_withInput" />
+						<button id="rgb_copycode_btn">Copy</button>
+					</div>
+					<h4>The RGB color code is :<br><span id="show_rgbcolor_code">???</span></h4>
+					<button id="rgb_colorChange_btn">RGB Change Color</button>
+					
+				</div>
+			    <div class="color_box">
+					<div class="inpuy_box">
+						<input type="text" disabled value="#000000" id="show_hexcolor_code_withInput" />
+						<button id="hex_copycode_btn">Copy</button>
+					</div>
+					<h4>The HEX color code is : <br><span id="show_hexcolor_code">???</span></h4>
+					<button id="hex_colorChange_btn">HEX Change Color</button>
+					
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
