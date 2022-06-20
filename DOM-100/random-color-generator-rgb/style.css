@@ -23,7 +23,20 @@ body {
 	align-items: center;
 }
 
-#rgb_colorChange_btn,#hex_colorChange_btn {
+#rgb_colorChange_btn {
+	padding: 1rem 3rem;
+	margin: 1rem 0;
+	outline: none;
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 0.25rem;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+#hex_colorChange_btn{
 	padding: 1rem 3rem;
 	margin: 1rem 0;
 	outline: none;
@@ -38,7 +51,12 @@ body {
 }
 
 
-#rgb_colorChange_btn,#hex_colorChange_btn:hover {
+#rgb_colorChange_btn:hover {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #000;
+}
+#hex_colorChange_btn:hover {
 	background-color: #fff;
 	color: #000;
 	border: 1px solid #000;
@@ -85,4 +103,71 @@ input[type='text']:disabled {
 	padding: 0.5rem 1rem;
 	border-radius: 0.25rem;
 	margin: 0 auto;
+}
+#rgb_copycode_btn:hover{
+    background-color: #000;
+	color: #fff;
+}
+#hex_copycode_btn:hover{
+    background-color: #000;
+	color: #fff;
+}
+
+/* ------ for toast-message --------- */
+
+.toast-message{
+	position: fixed;
+	z-index: 999;
+	top: 2rem;
+	right: 2rem;
+	background-color: rgb(19, 201, 110) !important;
+	color: #fff;
+	border-radius: 0.25rem;
+	padding: 1rem 2rem;
+	cursor: pointer;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.toast-msg-slide-in{
+	animation: toast-animation-in .5s ease-in;
+	-webkit-animation: toast-animation-in .5s ease-in;
+}
+.toast-msg-slide-out{
+	animation: toast-animation-out .5s ease-in;
+	-webkit-animation: toast-animation-out .5s ease-in;
+}
+
+@keyframes toast-animation-in {
+	from{
+       transform: translateX(200px);
+       -webkit-transform: translateX(200px);
+       -moz-transform: translateX(200px);
+       -ms-transform: translateX(200px);
+       -o-transform: translateX(200px);
+       opacity: 0;
+     }to{
+		transform: translateX(0px);
+		-webkit-transform: translateX(0px);
+		-moz-transform: translateX(0px);
+		-ms-transform: translateX(0px);
+		-o-transform: translateX(0px);
+		opacity: 1;
+  }
+}
+@keyframes toast-animation-out {
+	from{
+       transform: translateX(0px);
+       -webkit-transform: translateX(0px);
+       -moz-transform: translateX(0px);
+       -ms-transform: translateX(0px);
+       -o-transform: translateX(0px);
+       opacity: 1;
+}to{
+		transform: translateX(200px);
+		-webkit-transform: translateX(200px);
+		-moz-transform: translateX(200px);
+		-ms-transform: translateX(200px);
+		-o-transform: translateX(200px);
+		opacity: 0;
+}
 }

@@ -1,3 +1,9 @@
+// ------- global variable --------
+
+let toastMsgDiv = null;
+
+
+
 window.onload = () =>{
 	main()
 }
@@ -25,6 +31,13 @@ const main = () =>{
     
 	rgbCopyCodeBtn.addEventListener("click",function(){
 		window.navigator.clipboard.writeText(rgbColorCodeShowInput.value);
+
+		// ---- toast msg
+		if(toastMsgDiv !== null){
+			toastMsgDiv.remove();
+			toastMsgDiv = null;
+		}
+		createToastMessage(`${rgbColorCodeShowInput.value} copied successfully` );
 	})
 
 
@@ -37,15 +50,22 @@ const main = () =>{
 	})
 
 	hexCopyCodeBtn.addEventListener("click",function(){
-		window.navigator.clipboard.writeText(hexColorCodeShowInput.value) 
+		window.navigator.clipboard.writeText(hexColorCodeShowInput.value);
+
+		// ---- toast msg
+		if(toastMsgDiv !== null){
+			toastMsgDiv.remove();
+			toastMsgDiv = null;
+		}
+		createToastMessage(`${hexColorCodeShowInput.value} copied successfully` );
 	})
-
-
-
+	
+	
 
 
 }
 
+// --------- for RGB color code generate -------
 function ColorGenerateRGB (){
 	const R = Math.floor(Math.random() * 255);
 	const G = Math.floor(Math.random() * 255);
@@ -54,7 +74,7 @@ function ColorGenerateRGB (){
 	return  `rgb(${R},${G},${B})`;
 }
 
-// --------- for HEX color generate --------
+// --------- for HEX color code generate --------
 
 function ColorGeneratorHEX (){
 	const RR = Math.floor(Math.random() * 255);
@@ -63,3 +83,24 @@ function ColorGeneratorHEX (){
 
 	return  `#${RR.toString(16)}${GG.toString(16)}${BB.toString(16)}`;
 }
+
+// ---------------- create toast message -----------------
+
+function createToastMessage(x){
+    toastMsgDiv = document.createElement("div");
+	toastMsgDiv.className = "toast-message toast-msg-slide-in";
+	toastMsgDiv.innerText = x;
+
+	toastMsgDiv.addEventListener("click",function(){
+		toastMsgDiv.classList.remove("toast-msg-slide-in");
+		toastMsgDiv.classList.add("toast-msg-slide-out");
+
+		toastMsgDiv.addEventListener("animationend",function(){
+			toastMsgDiv.remove();
+			toastMsgDiv = null;
+		})
+	})
+
+	body.appendChild(toastMsgDiv);
+
+   }
